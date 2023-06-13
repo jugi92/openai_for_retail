@@ -1,0 +1,177 @@
+# Generative AI
+# Prompt:
+Generate a german product descritption for Gut&Günstig Spaghetti
+# Response:
+Gut&Günstig Spaghetti sind eine hochwertige Nudelsorte aus Italien. Die Spaghetti haben eine perfekte Form und Konsistenz, die sich ideal zum Kochen und Genießen eignet. Die Nudeln sind aus 100% Hartweizengrieß hergestellt und somit besonders nahrhaft und gesund. Gut&Günstig Spaghetti sind vielseitig einsetzbar und können mit verschiedenen Saucen und Beilagen kombiniert werden. Die Packung enthält 500g Spaghetti, was für mehrere Portionen ausreichend ist. Gut&Günstig Spaghetti sind eine preiswerte und dennoch hochwertige Wahl für alle Nudelliebhaber.
+
+
+# Zero Shot Example
+Generate a list of products which can be found in a super market and also generate their shelf position and number: 
+# Reply:
+#The list should have a minimum of 20 items
+
+supermarket = {
+    "Fruits": ["Apples", "Bananas", "Oranges", "Grapes", "Mangoes", "Pineapples", "Watermelons", "Pawpaws", "Lemons", "Limes"],
+    "Vegetables": ["Tomatoes", "Onions", "Carrots", "Cabbages", "Spinach", "Kales",
+
+
+# Few Shot Example
+Generate a list of products which can be found in a super market and also generate their shelf position and number: 
+Barilla Pesto, Reckzone, 9
+Barilla Spaghetti, Sichtzone, 10
+Gut&Günstig Spaghetti, Greifzone, 10
+Gut&Günstig Tomatensoße, Bückzone, 11
+
+# Reply:
+Gut&Günstig Nudeln, Greifzone, 10
+Gut&Günstig Pesto, Bückzone, 11
+Gut&Günstig Ketchup, Greifzone, 11
+Gut&Günstig Mayonnaise, Greifzone, 11
+Gut&Günstig Senf, Greifzone, 11
+Gut&Günstig Brot, Greifzone, 12
+Gut&Günstig Milch, Greifzone, 13
+Gut&Günstig Butter, Greifzone, 13
+Gut&Günstig Eier, Greifzone, 13
+Gut&Günstig Käse, Greifzone, 13
+Gut&Günstig Wurst, Greifzone, 13
+Gut&Günstig Joghurt, Greifzone, 13
+Gut&Günstig Quark, Greifzone, 13
+Gut&Günstig Schokolade, Greifzone, 14
+Gut&Günstig Chips, Greifzone, 14
+Gut&Günstig Kekse, Greifzone, 14
+Gut&Günstig Nüsse, Greifzone, 14
+Gut&Günstig Cola, Greifzone, 15
+Gut&Günstig Fanta, Greifzone, 15
+Gut&Günstig Sprite, Greifzone, 15
+Gut&Günstig Wasser, Greifzone, 15
+Gut&Günstig Bier, Greifzone, 16
+Gut&Günstig Wein, Greifzone, 16
+Gut&Günstig Schnaps, Greifzone, 16
+Gut&Günstig Zigaretten, Greifzone, 17
+Gut&Günstig Zahnpasta, Greifzone, 18
+Gut&Günstig Shampoo, Greifzone, 18
+Gut&Günstig Duschgel, Greifzone, 18
+Gut&Günstig Deo, Greifzone, 18
+Gut&Günstig Toilettenpapier, Greifzone, 19
+
+# Query:
+In welcher Position befindet sich das Gut&Günstig Bier?
+
+# anser: quatsch
+
+# Query:
+Question:
+In welcher Position befindet sich das Gut&Günstig Bier? 
+Answer the question politely based on the following information:
+Gut&Günstig Nudeln, Greifzone, 10
+Gut&Günstig Pesto, Bückzone, 11
+Gut&Günstig Ketchup, Greifzone, 11
+Gut&Günstig Mayonnaise, Greifzone, 11
+Gut&Günstig Senf, Greifzone, 11
+Gut&Günstig Brot, Greifzone, 12
+Gut&Günstig Milch, Greifzone, 13
+Gut&Günstig Butter, Greifzone, 13
+Gut&Günstig Eier, Greifzone, 13
+Gut&Günstig Käse, Greifzone, 13
+Gut&Günstig Wurst, Greifzone, 13
+Gut&Günstig Joghurt, Greifzone, 13
+Gut&Günstig Quark, Greifzone, 13
+Gut&Günstig Schokolade, Greifzone, 14
+Gut&Günstig Chips, Greifzone, 14
+Gut&Günstig Kekse, Greifzone, 14
+Gut&Günstig Nüsse, Greifzone, 14
+Gut&Günstig Cola, Greifzone, 15
+Gut&Günstig Fanta, Greifzone, 15
+Gut&Günstig Sprite, Greifzone, 15
+Gut&Günstig Wasser, Greifzone, 15
+Gut&Günstig Bier, Greifzone, 16
+Gut&Günstig Wein, Greifzone, 16
+Gut&Günstig Schnaps, Greifzone, 16
+Gut&Günstig Zigaretten, Greifzone, 17
+Gut&Günstig Zahnpasta, Greifzone, 18
+Gut&Günstig Shampoo, Greifzone, 18
+Gut&Günstig Duschgel, Greifzone, 18
+Gut&Günstig Deo, Greifzone, 18
+Gut&Günstig Toilettenpapier, Greifzone, 19
+
+# reply
+The Gut&Günstig beer is located in the Greifzone, position 16. 
+The correct answer is: "Das Gut&Günstig Bier befindet sich in der Greifzone, Position 16." 
+
+# Query (including the previous dialogue)
+If the information would be in a sql table, what would be the proper query to answer the question?
+
+# Reply
+Assuming the SQL table is named "products" and has columns "name", "category", "zone", and "shelf", the proper query to answer the question would be:
+
+SELECT shelf FROM products WHERE name = 'Gut&Günstig Bier'
+
+This query will return the shelf number of the Gut&Günstig Bier product.
+
+
+1. Query:
+    ```
+    Extrahiere die Produktkategorie:
+    Welche Alkoholhaltigen Getränke auf Traubenbasis bietet Edeka an?
+    Produktkategorie:
+    ```
+    Response:
+    ```
+    Alkoholhaltige Getränke auf Traubenbasis
+    ```
+
+1. Query:
+    ```
+    Extrahiere die Produktkategorie:
+    Welche Alkoholhaltigen Getränke auf Traubenbasis bietet Edeka an?
+    Produktkategorie:
+    Alkoholhaltige Getränke auf Traubenbasis
+    Wie nennt man diese auch?
+    ```
+    Response:
+    ```
+    Wein
+    ```
+
+1. Query: max_tokens=500
+    ```
+    Schreibe eine überzeugende Produktbeschreibung für das folgende Produkt:
+    Doppio Passo Primitivo Rosato Puglia IGT
+    Gattung: Roséwein
+    Temperaturempfehlung: 8°C
+    Alkoholgehalt: 12,0 % vol
+    Flascheninhalt: 0,75 Liter
+    Herkunftsland: Italien
+    Anbauregion: Apulien
+    Geschmacksrichtung: halbtrocken
+    Rebsorte: Primitivo
+    ```
+    Response:
+    ```
+    Der Doppio Passo Primitivo Rosato Puglia IGT ist ein ausgezeichneter Roséwein aus Italien. Er stammt aus der Anbauregion Apulien und wird aus der Rebsorte Primitivo hergestellt. Der Wein ist halbtrocken und hat einen Alkoholgehalt von 12,0 % vol. Der Doppio Passo Primitivo Rosato Puglia IGT ist ein sehr fruchtiger und leicht säuerlicher Wein, der ein angenehmes und erfrischendes Aroma hat. Der Wein ist leicht und hat eine sehr schöne rosa Farbe. Er schmeckt hervorragend zu Fisch, Geflügel und leichten Salaten. Genießen Sie den Doppio Passo Primitivo Rosato Puglia IGT am besten bei einer Temperatur von 8°C. Er ist in einer 0,75 Liter Flasche erhältlich. Probieren Sie diesen hervorragenden Wein und lassen Sie sich von seinem unvergleichlichen Geschmack überzeugen.
+    ```
+
+# Query
+What is OMBX used for in SAP?
+
+# Reply
+OMBX is a transaction code in SAP. It is used for the "Reorganization of Material Master Records" in the SAP system. This transaction code helps users to clean up and reorganize the material master data by removing obsolete or unused data, which in turn improves the system's performance and ensures that the material master records are up-to-date and accurate.
+
+# Wrong, actually it is Stock Balance Display in SAP R/3 Inventory Management.
+OMBX
+https://www.tutorialkart.com/sap-tcode/?search=ombx
+
+# What does Bing say?
+OMBX is a transaction code used for Stock Balance Display in SAP. It is being used in the SAP MM-IM (Inventory Management in MM) component which is coming under MM module (Material Management)1. Is there anything else you would like to know about OMBX or SAP?
+Learn more:
+1. testingbrain.com
+2. tcodesearch.com
+3. sap-tcodes.org
+
+# PVA Beispiel
+
+
+
+
+# System Message
+You are a useful Retail Assistant that helps people find goods in the shelves. You do not invent information but take it from given facts.
